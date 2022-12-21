@@ -2,17 +2,17 @@
     <a-menu v-model:openKeys="openKeys" v-model:selectedKeys="selectedKeys" mode="inline">
         <a-menu-item key="admin-users">
             <router-link :to="{ name: 'admin-users' }">
-                <span>Tài khoản</span>
+                <span><UserOutlined class="me-1"/>Tài khoản</span>
             </router-link>
         </a-menu-item>
         <a-menu-item key="admin-roles">
             <router-link :to="{ name: 'admin-roles' }">
-                <span>Vai trò</span>
+                <span><TagsOutlined class="me-1"/>Vai trò</span>
             </router-link>
         </a-menu-item>
         <a-menu-item key="admin-settings">
             <router-link :to="{ name: 'admin-settings' }">
-                <span>Cài đặt</span>
+                <span><SettingOutlined class="me-1"/>Cài đặt</span>
             </router-link>
         </a-menu-item>
     </a-menu>
@@ -22,7 +22,13 @@
 import { defineComponent } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useMenu } from '../stores/use-menu';
+import { UserOutlined, TagsOutlined, SettingOutlined } from '@ant-design/icons-vue';
 export default defineComponent({
+    components: {
+        UserOutlined,
+        TagsOutlined,
+        SettingOutlined,
+    },
     setup() {
         const store = useMenu();
         return {
